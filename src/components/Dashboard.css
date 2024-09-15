@@ -1,0 +1,62 @@
+/* General container setup */
+.dashboard-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+  }
+  
+  /* Header section */
+  .dashboard-header {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d9eaf7;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .dashboard-nav span {
+    margin: 0 20px;
+  }
+  
+  .logout-button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  /* Sidebar setup */
+  .dashboard-sidebar {
+    background-color: yellow;
+    padding: 15px;
+    font-weight: bold;
+    border-right: 1px solid #ccc;
+  }
+  
+  .dashboard-sidebar .active {
+    display: block;
+  }
+  
+  /* Main content setup */
+  .dashboard-main {
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
