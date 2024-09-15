@@ -1,6 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Dashboard.css'; // Create this file for styling
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import './Dashboard.css';
+import EmployeeList from './EmployeeList';
+import CreateEmployee from './CreateEmployee';
 
 function Dashboard() {
   const username = localStorage.getItem('username') || 'Hukum Gupta'; // Default username
@@ -18,16 +20,20 @@ function Dashboard() {
       <header className="dashboard-header">
         <div className="logo">Logo</div>
         <nav className="dashboard-nav">
-          <span>Home</span>
-          <span>Employee List</span>
+          <span onClick={() => navigate('/')}>Home</span>
+          <span onClick={() => navigate('/employees')}>Employee List</span>
           <span>{username} - <button onClick={handleLogout} className="logout-button">Logout</button></span>
         </nav>
       </header>
       <aside className="dashboard-sidebar">
-        <span className="active">Dashboard</span>
+        <span className="active" onClick={() => navigate('/create-employee')}>Create Employee</span>
       </aside>
       <main className="dashboard-main">
-        <h1>Welcome Admin Panel</h1>
+        <Routes>
+          <Route path="/" element={<h1>Welcome to Admin Panel</h1>} />
+          <Route path="/employees" element={<EmployeeList />} />
+          <Route path="/create-employee" element={<CreateEmployee />} />
+        </Routes>
       </main>
     </div>
   );

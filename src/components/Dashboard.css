@@ -1,62 +1,171 @@
 /* General container setup */
 .dashboard-container {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 200px 1fr;
-    height: 100vh;
-  }
-  
-  /* Header section */
-  .dashboard-header {
-    grid-column: span 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #d9eaf7;
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .dashboard-nav span {
-    margin: 0 20px;
-  }
-  
-  .logout-button {
-    background-color: transparent;
-    border: none;
-    color: red;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  /* Sidebar setup */
-  .dashboard-sidebar {
-    background-color: yellow;
-    padding: 15px;
-    font-weight: bold;
-    border-right: 1px solid #ccc;
-  }
-  
-  .dashboard-sidebar .active {
-    display: block;
-  }
-  
-  /* Main content setup */
-  .dashboard-main {
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Header section */
+.dashboard-header {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d9eaf7;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard-nav span {
+  margin: 0 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Sidebar setup */
+.dashboard-sidebar {
+  background-color: yellow;
+  padding: 20px;
+  border-right: 2px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dashboard-sidebar .active {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Main content setup */
+.dashboard-main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  overflow-y: auto;
+}
+
+/* Form and table common styles */
+.centered-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.create-employee-container {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-employee-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.create-employee-form div {
+  margin-bottom: 10px;
+}
+
+.create-employee-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.create-employee-form input[type="text"],
+.create-employee-form input[type="email"],
+.create-employee-form select,
+.create-employee-form input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-employee-form input[type="checkbox"],
+.create-employee-form input[type="radio"] {
+  margin-right: 5px;
+}
+
+.create-employee-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  grid-column: span 2;
+}
+
+.create-employee-form button:hover {
+  background-color: #45a049;
+}
+
+/* Employee List Styles */
+.employee-list-container {
+  background-color: white;
+  padding: 20px;
+  width: max-content;
+  border: 2px solid #ccc;
+}
+
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.employee-table th, .employee-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: #d9eaf7;
+}
+
+.employee-table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.employee-search {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
