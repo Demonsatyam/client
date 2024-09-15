@@ -49,6 +49,23 @@ function EmployeeList() {
     setEmployees(filteredEmployees);
   }, [searchTerm, globalEmployeeList]);
 
+  // Function to convert absolute path to a relative URL
+  const formatImagePath = (path) => {
+    // Check if the path contains backslashes (Windows-style paths)
+    if (path.includes('\\')) {
+      // Replace backslashes with forward slashes
+      path = path.replace(/\\/g, '/');
+    }
+
+    // Strip the absolute part of the path and return only the relative part for `/uploads/`
+    const uploadIndex = path.indexOf('/uploads');
+    if (uploadIndex !== -1) {
+      return `http://localhost:8009${path.substring(uploadIndex)}`; // Serve from the uploads folder
+    }
+    
+    return ''; // Fallback in case no valid path is found
+  };
+
   // Handle delete
   const handleDelete = async (id) => {
     try {
@@ -137,7 +154,7 @@ function EmployeeList() {
                 <td>{employee._id}</td>
                 <td>
                   <img 
-                    src={`http://localhost:8009${employee.imagepath.replace('/Users/deepamkumar/Desktop/MyProjects/employeeManagement/server', '')}`} 
+                    src={formatImagePath(employee.imagepath)} // Use the function to correctly format the image path
                     alt={employee.name} 
                     width="50" 
                     height="50"
